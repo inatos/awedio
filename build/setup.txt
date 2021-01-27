@@ -1,0 +1,8 @@
+--install
+npm
+ https://nodejs.org/en/download/
+yarn
+ npm install --global yarn
+neon
+ npm install --global --production windows-build-tools
+ yarn global add neon-cli

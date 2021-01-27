@@ -4,13 +4,14 @@ mod scrapper;
 
 extern crate hyper;
 
+
 use std::io::Read;
 use std::io::prelude::*;
 use std::fs::File;
 use regex::Regex;
 
 
-use hyper::{ client::Client, header, http::{Request, Response, StatusCode} };
+use hyper::{ client::{Client, ResponseFuture}, header, http::{Request, Response, StatusCode} };
 //use actix_web::{get, post, web, App, HttpResponse, HttpServer, Responder};
 
 
@@ -66,7 +67,7 @@ async fn download(url: &str)
     {
         // get response from selected quality
         println!("Downloading {}", url);
-        let response = request(&stream.url).await;
+        let response = send_request(&stream.url);
         println!("Download is starting...");
 
         let filename = match stream.extension() {
@@ -132,6 +133,10 @@ async fn download(url: &str)
 //     }
 // }
 
+async fn send_request (url: &str) -> ResponseFuture {
+    return Client::new().get(url.parse().unwrap());
+}
+
 // get file size from Content-Length header
 fn get_file_size(response: &Response) -> u64 {
     let mut file_size = 0;
@@ -165,9 +170,7 @@ fn write_file(mut response: Response, title: &str) {
 }
 
 
-async fn request (url: &str) -> Response {
-    return Client::new().get(url).await?;
-}
+
 
 // fn send_requestj(url: &str) -> Response {
 //     let ssl = NativeTlsClient::new().unwrap();

@@ -1,5 +1,5 @@
 # Compile Native and Node Modules
-cd C:\Users\Inatos\Documents\Projects\awedio\ui 
+cd ..\ui 
 yarn --check-files
 
 pause
