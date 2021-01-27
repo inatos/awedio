@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Awedio, the Music Formatter</title>
+    <h1></h1>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script>window.$ = window.jQuery = require("jquery");</script>
+    <script>require("popper.js");</script>
+    <script>require("bootstrap");</script>
+    <script src="./index.js"></script>
+    <!-- <script>
+      /** Directory Getter **/
+      $(function()
+      {
+        $("#dirInput").on("change input", function() {;
+          $("#dirName").innerText = $("#dirInput").val().split("\\").pop();
+        });
+      
+        $("#dirInput").on("dragenter", function() {
+          dropzone.classList.add("dragover");
+        });
+      
+        $("#dirInput").on("dragleave", function() {
+          dropzone.classList.remove("dragover");
+        });
+      });
+          </script> -->
+  </head>
+  <body>
+    <div class="panel panel-custom">
+      <div class="panel-body">
+        <form>
+          <div class="group">
+            <p>Input Type</p>
+            <p>
+              <label class="radio-inline">
+                <input id="youtubeInput" type="radio" name="inputRadio" checked />Youtube
+              </label>
+              <label class="radio-inline">
+                <input id="fileInput" type="radio" name="inputRadio" />File
+              </label>
+              <!-- <label class="radio-inline">
+                <input id="urlInput" type="radio" name="inputRadio" checked />Url
+              </label>
+              <label class="radio-inline">
+                <input id="streamInput" type="radio" name="inputRadio" />Stream
+              </label> -->
+            </p>
+
+            <div class="" id="youtubeInputDiv">
+              <input type="text" class="form-control" placeholder="Paste a YouTube Url" />
+            </div>
+            <div id="fileInputDiv" class="input-group mb-3 hide">
+              <div class="input-group-prepend">
+                <button id="outputDirectoryBtn" type="button" class="btn form-btn inline-btn-left" onclick="SelectFiles();"><span class="glyphicon glyphicon-upload" aria-label="Open File"></span></button>
+              </div>
+              <input type="text" class="form-control" placeholder="Select File" />
+            </div>
+          </div>
+
+          <div class="group">
+            <p>Output Type</p>
+            <p>
+              <label class="radio-inline">
+                <input id="mp3Output" type="radio" name="outputRadio" checked />Mp3
+              </label>
+              <label class="radio-inline">
+                <input id="wavOutput" type="radio" name="outputRadio" />WAV
+              </label>
+              <label class="radio-inline">
+                <input id="mp4Output" type="radio" name="outputRadio" />Mp4
+              </label>
+              <label class="radio-inline">
+                <input id="webmOutput" type="radio" name="outputRadio" />Webm
+              </label>
+            </p>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button id="outputDirectoryBtn" type="button" class="btn form-btn inline-btn-left" onclick="SelectDirectory('output');"><span class="glyphicon glyphicon-folder-open" aria-label="Open Folder"></span></button>
+              </div>
+              <input type="text" class="form-control" placeholder="Select File Destination" />
+            </div> 
+          </div>
+          <!-- Drag & Drop -->
+          <!-- <div class="group">
+            <label for="test" class="dir-getter-label">
+              <div id="dirDropzone" class="dir-getter-div">Select/Drag Output Folder</div>
+              <input id="dirInput" type="file" webkitdirectory directory />
+            </label>
+            <p id="dirName"></p>
+          </div> -->
+          
+          <div class="group">
+            <p></p>
+          </div>
+                
+        </form>
+      </div>
+    </div>
+    
+    <script>
+      try {
+    console.log(require("app"))
+    document.write(`<h1>${require("app").hello()}</h1>`);
+  } catch (e) {
+    document.write(`<pre>${e.stack}</pre>`);
+  }
+
+    </script>
+
+
+  </body>
+</html>

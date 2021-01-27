@@ -1,0 +1,103 @@
+html {
+    --mainBackground: #23272a;
+    --panelBackground: #2c2f33;
+    --textActive: snow;
+    --inputBackground: #72767d;
+    --textHover: chocolate;
+    --controlBackground: #680e96;
+    --controlOutline: #aa32ff;
+    --dragBackground: #aaa;
+}
+
+body {
+    background: var(--mainBackground);
+    color: var(--textActive);
+}
+
+input[type="file"] {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    width: 15em;
+}
+
+.form-control {
+    background-color: var(--inputBackground);
+    color: var(--textActive);
+    border: none;
+}
+
+.form-control:focus {
+    border-color: var(--controlOutline);
+    box-shadow: none;
+}
+
+.dir-getter-div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--controlBackground);
+    border: .1em dashed var(--controlOutline);
+    border-radius: .7em;
+}
+
+.dir-getter-label {
+    display: inline-block;
+    position: relative;
+    height: 3em;
+    width: 20em;
+}
+
+.dragover {
+    background-color: var(--dragBackground);
+}
+
+.panel-custom {
+    background-color: var(--panelBackground);
+    margin: 1em;
+    padding: 1em;
+}
+
+.group {
+    padding-bottom: 2em;
+}
+
+.input-group {
+    display: inline-flex;
+    width: -webkit-fill-available;
+}
+
+.form-btn {
+    background-color: var(--controlBackground);
+    border: .07em dotted var(--controlOutline);
+    border-top-left-radius: .4em;
+    border-top-right-radius: .4em;
+    border-bottom-left-radius: .4em;
+    border-bottom-right-radius: .4em;
+}
+
+.inline-btn-left {
+    border-top-right-radius: 0em;
+    border-bottom-right-radius: 0em;
+    border-right: none;
+}
+
+.form-btn:focus {
+    outline-style: none;
+    color: var(--textHover);
+    border-color: var(--textHover);
+}
+
+.form-btn:hover {
+    color: var(--textHover);
+}
+
+.hide {
+    display: none;
+}
