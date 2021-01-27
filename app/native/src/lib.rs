@@ -62,7 +62,7 @@ async fn download(url: &str)
 
     println!("Please wait...");
 
-    if let Some(ref stream) = streams.get(input) 
+    if let Some(ref stream) = streams.get(480) 
     {
         // get response from selected quality
         println!("Downloading {}", url);
